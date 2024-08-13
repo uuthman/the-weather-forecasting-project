@@ -94,6 +94,7 @@ module "ecs_task_definition" {
   image = module.ecr_registry.repository_url
   network_mode = var.network_mode
   task_family = var.task_family
+  cloud_watch_name = module.log.name
 }
 
 module "ecs_service" {

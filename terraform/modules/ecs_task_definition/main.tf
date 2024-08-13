@@ -19,6 +19,14 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
           protocol      = var.container_protocol
         }
       ]
+      logConfiguration = {
+        logDriver = "awslogs",
+        options = {
+          "awslogs-group"         = var.cloud_watch_name,
+          "awslogs-region"        = "us-east-1",
+          "awslogs-stream-prefix" = "ecs"
+        }
+      }
     }
   ])
   runtime_platform {

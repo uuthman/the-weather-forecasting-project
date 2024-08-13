@@ -47,3 +47,7 @@ variable "execution_role_arn" {
   description = "The iam role"
   type = string
 }
+
+variable "cloud_watch_name" {
+  type = string
+}
