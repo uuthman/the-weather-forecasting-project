@@ -6,6 +6,12 @@ resource "aws_lb_target_group" "ecs_target_group" {
   vpc_id = var.vpc_id
 
   health_check {
-    path = "/"
+    healthy_threshold   = "3"
+    interval            = "30"
+    protocol            = "HTTP"
+    matcher             = "200"
+    timeout             = "3"
+    path                = "/"
+    unhealthy_threshold = "2"
   }
 }

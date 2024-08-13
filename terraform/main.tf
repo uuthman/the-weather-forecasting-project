@@ -55,10 +55,10 @@ module "target_group" {
 
 module "load_balancer_listener" {
   source = "./modules/load_balancer_listener"
-  alb_id = module.application_load_balancer.ecs_alb_id
+  alb_id = module.application_load_balancer.ecs_alb_arn
   listener_port = var.listener_port
   listener_protocol = var.listener_protocol
-  target_group_id = module.target_group.target_group_id
+  target_group_id = module.target_group.target_group_arn
 }
 
 module "ecr_registry" {
