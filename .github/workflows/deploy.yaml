@@ -51,7 +51,7 @@ jobs:
         with:
           task-definition: taskDefinition.json
           container-name: ${{ secrets.AWS_ECS_CONTAINER_NAME }}
-          image: ${{ steps.build-and-tag-docker-image.outputs.IMAGE_URI }}
+          image: ${{ steps.build-docker-image.outputs.IMAGE_URI }}
 
 
       - name: Deploy Amazon ECS task definition
