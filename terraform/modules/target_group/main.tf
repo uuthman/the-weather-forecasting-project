@@ -11,7 +11,7 @@ resource "aws_lb_target_group" "ecs_target_group" {
     protocol            = "HTTP"
     matcher             = "200"
     timeout             = "3"
-    path                = "/"
+    path                = "/health"
     unhealthy_threshold = "2"
   }
 }
