@@ -5,6 +5,7 @@ resource "aws_ecs_service" "main" {
   desired_count = var.desired_count
   launch_type = "FARGATE"
 
+
   network_configuration {
     subnets = [var.subnet_id, var.subnet_2_id]
     security_groups = [var.ecs_security_group_id]

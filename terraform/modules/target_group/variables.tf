@@ -12,3 +12,8 @@ variable "target_group_protocol" {
   description = "The protocol for target protocol"
   type = string
 }
+
+variable "depends_on_alb" {
+  description = "This depends on alb"
+  type = any
+}

@@ -51,6 +51,7 @@ module "target_group" {
   target_group_port = var.target_group_port
   target_group_protocol = var.target_group_protocol
   vpc_id = module.vpc.vpc_id
+  depends_on_alb = module.application_load_balancer
 }
 
 module "load_balancer_listener" {
@@ -145,4 +146,9 @@ module "cloudwatch" {
   metric_name = var.metric_name
   service_name = module.ecs_service.service_name
   statistic = var.statistic
+}
+
+module "log" {
+  source = "./modules/logs"
+  name = "ecs/${var.container_name}"
 }
