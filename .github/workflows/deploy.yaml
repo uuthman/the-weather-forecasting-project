@@ -54,7 +54,7 @@ jobs:
           image: ${{ steps.build-docker-image.outputs.IMAGE_URI }}
 
 
-      - name: Deploy Amazon ECS task definition
+      - name: Deploy Amazon ECS task definition Dee
         id: deploy-ecs
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1.4.11
         with:
